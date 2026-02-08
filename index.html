@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>One Last Choice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: linear-gradient(135deg, #ffd6e0, #fff3c4);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      width: 100%;
+      max-width: 420px;
+      padding: 28px 22px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 28px;
+      line-height: 1.4;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      font-size: 18px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+
+    #yes {
+      background: #4CAF50;
+      color: white;
+    }
+
+    #no {
+      background: #e74c3c;
+      color: white;
+      position: relative;
+    }
+
+    .farewell {
+      font-size: 16px;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    .farewell h2 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .farewell p {
+      margin-bottom: 14px;
+    }
+
+    .sign {
+      text-align: right;
+      margin-top: 24px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h1 id="question">Did this unit become more than just an activity for you?</h1>
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+</div>
+
+<script>
+  const questions = [
+    "Did this unit become more than just an activity for you?",
+    "Would I miss this place more than I expected?",
+    "Did this place shape you in ways you didn’t see coming?",
+    "Did this place ever feel like a second home?",
+    "Am I God? Hehee 😌 (Try clicking No 🙂)",
+    "Did you smile while reading this?"
+  ];
+
+  let step = 0;
+
+  const yesBtn = document.getElementById("yes");
+  const noBtn = document.getElementById("no");
+  const question = document.getElementById("question");
+  const card = document.getElementById("card");
+
+  function moveNo() {
+    noBtn.style.transform = `translate(${Math.random()*40-20}px, ${Math.random()*40-20}px)`;
+  }
+
+  noBtn.addEventListener("mouseover", moveNo);
+  noBtn.addEventListener("click", moveNo);
+
+  yesBtn.addEventListener("click", () => {
+    step++;
+    if (step < questions.length) {
+      question.innerText = questions[step];
+    } else {
+      confetti({
+        particleCount: 250,
+        spread: 120,
+        origin: { y: 0.6 }
+      });
+
+      card.innerHTML = `
+        <div class="farewell">
+          <h2>Helloo Cutiess🥹🫶</h2>
+
+          <p>The d day was long over and obv I am late again😔 not because of procrastination this time but lack of motivation to dissolve this group but nevermind.</p>
+
+          <p>Leaving the unit feels heavy because of staggering bunch of people like you all. Will be keeping the filters off as this is my last written message to you all. 😭</p>
+
+          <p>I came to Delhi to honestly serve just a sole purpose of getting exposure and get out of my comfort zone and all sorts of pampering I receive at my home otherwise distance learning would have served the purpose too. Not even a day i felt regret to come at this convivial place. Learnt a lot, grew a lot, made such beautiful bonds, I wish would last forever.</p>
+
+          <p>As for NSS, 1st year was absolutely bomb—used to enjoy a lot with a lot of self doubts etc but my friends kept me going. Still miss a lot those carefree moments and those wonderful evenings especially during the events prep. SAHYOG was everyone’s fav with their own fav students so as to say, mine being Sneha, Kajal, Rahul, Munish etc.</p>
+
+          <p>Second year was overwhelming. From the day of getting promoted as a coordinator, thought of leaving the unit after I amass some experience, but the thought soon faded away when I started enjoying the work as this was the time I was learning something new each passing day. As for SAHYOG, 70% of days still went on to teaching classes 11th and 12th.</p>
+
+          <p>Enjoyed hosting the meetings, interacting with juniors etc. The time of interviews came when I was adamant ki advisory mein jaunga mst Nitish ke saath pr to our sorrow advisory toh bani hi nhi. Then laid my eyes on the post of Sahyog Head but failed there too😭. That 4 hours long interview still is very much memorable 😋 bonds with several people were severed that day but took a sigh of relief because nothing I said was wrong imo but never mind.</p>
+
+          <p>Then was handed over with the responsibility of Vice President without even my accord😭 but nevertheless this is what made it more exciting—from balancing different pov’s to resolving conflicts to myself getting into conflicts, everyday new day brought a different thrill.</p>
+
+          <p>Those alarming calls of Jeetesh sir, DYOs especially during the Youth Parliament were all mess. Raat ko 2 baje sona and 9 am pr meetings scheduled hona really humbled me and taught that nothing can be done alone—the team is for a purpose.</p>
+
+          <p>The bond with all of you grew at this time with always a sense of relief that nothing would go wrong. I am surrounded by amazing people. Rectified many of my personality flaws overtime.</p>
+
+          <p>My heartfelt congratulations to you all🫶 You will absolutely slayy ik. Keep up the good work🥵 Have any confusions related to literally anything, you can ping me anytime.</p>
+
+          <p>Also damnn all the outings, house parties, secret santa specially would all hold a forever place in my heart ❤️</p>
+
+          <p>You all are incredible, and I hope I didn’t fall short as a senior or a friend. I may not have been perfect, but I gave it my all. Forever grateful to everyone involved in my journey 🫶</p>
+
+          <p><strong>Adios 👋</strong></p>
+
+          <div class="sign">
+            Signing Off<br>
+            Nikhil Singla<br><br>
+            <em>(P.S. – Had to write a lot more 😭)</em>
+          </div>
+        </div>
+      `;
+    }
+  });
+</script>
+
+</body>
+</html>
